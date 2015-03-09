@@ -1,0 +1,27 @@
+{
+  "name": "transform-files",
+  "version": "1.0.0",
+  "description": "Transform all files in one directory (and below) to another (or the same). Use underscore templates.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "move",
+    "copy",
+    "transform",
+    "config",
+    "replace",
+    "read",
+    "write",
+    "recursive"
+  ],
+  "author": "Ole-Kenneth Rangnes <ok@rait.no>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.13",
+    "mkdirp": "^0.5.0",
+    "recursive-readdir": "^1.2.1",
+    "underscore": "^1.8.2"
+  }
+}
