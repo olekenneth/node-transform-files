@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+'use strict';
+var arg1 = process.argv[2];
+var arg2 = process.argv[3];
+var arg3 = process.argv[4];
+if (arg1 === '--help') {
+    console.log('Usage: transform dir/ newdir/ [data]'),
+    console.log('       transform /etc /docker/etc \'{"domain": "example.com"}\'');
+    process.exit();
+}
+
+if (!arg1 || !arg2) {
+    console.error('Need input and output dirs.');
+    console.error('Help: transform --help');
+    process.exit();
+}
+
+
+if (!arg3) {
+    console.log('Not passing 3rd argument: copying files. Help: transform --help');
+}
+
+var data = JSON.parse(arg3);
+
+var inputDir = arg1.replace(/\/$/, '');
+var outputDir = arg2.replace(/\/$/, '');
+var path = require('path');
+var fs = require('fs');
+var dir = path.join(path.dirname(fs.realpathSync(__filename)), '../');
+var transform = require(dir + 'app');
+
+transform(inputDir, outputDir, data);
