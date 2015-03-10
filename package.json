@@ -1,6 +1,6 @@
 {
   "name": "transform-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform all files in one directory (and below) to another (or the same). Use underscore templates.",
   "main": "app.js",
   "bin": {
